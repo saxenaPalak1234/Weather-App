@@ -10,21 +10,21 @@ export const WeatherProvider = ({ children }) => {
   const [latitude, setLatitude] = useState(0);
   const [longitude, setLongitude] = useState(0);
 
-  // Load the saved latitude and longitude from localStorage on component mount
+ 
   useEffect(() => {
     const savedLatitude = localStorage.getItem('latitude');
     const savedLongitude = localStorage.getItem('longitude');
     
     if (savedLatitude && savedLongitude) {
-      setLatitude(parseFloat(savedLatitude)); // Parse as a float
-      setLongitude(parseFloat(savedLongitude)); // Parse as a float
+      setLatitude(parseFloat(savedLatitude)); 
+      setLongitude(parseFloat(savedLongitude)); 
     }
   }, []);
 
-  // Save the latitude and longitude to localStorage whenever they change
+ 
   useEffect(() => {
-    localStorage.setItem('latitude', latitude.toString()); // Convert back to string for storage
-    localStorage.setItem('longitude', longitude.toString()); // Convert back to string for storage
+    localStorage.setItem('latitude', latitude.toString()); 
+    localStorage.setItem('longitude', longitude.toString()); 
   }, [latitude, longitude]);
 
   const updateWeatherLocation = (newLatitude, newLongitude) => {
