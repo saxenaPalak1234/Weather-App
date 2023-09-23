@@ -1,70 +1,104 @@
-# Getting Started with Create React App
+# Weather App ☀️🌦️🌧️
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Weather App Logo](link_to_your_logo_image)
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+The Weather App is a simple yet powerful web application that allows users to check the current weather conditions for a specific location based on latitude and longitude coordinates. This application integrates with the WeatherAPI.com service to provide accurate weather data and also offers additional features like geolocation and local storage persistence.
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Step 1: Create a Form Component 📝
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Developed a user-friendly form component to input custom latitude and longitude values.
 
-### `npm test`
+### Step 2: Implement use-formik (optional) for Form Management 📋
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Constructed a form with input fields for latitude and longitude.
+- Added validation for fields and ErrorMessage components for valid latitude and longitude input.
 
-### `npm run build`
+### Step 3: Geolocation Browser API 🌐
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Added a button labeled "Get Current Location" to the component.
+- On button click, executed the Geolocation API to retrieve the user's current latitude and longitude.
+- Automatically populated the latitude and longitude input fields in the form with the obtained values.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Step 4: API Integration with WeatherAPI.com 🌍
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Added a button labeled "Get Current Weather" to the component.
+- Configured an API call to WeatherAPI.com to fetch weather information.
 
-### `npm run eject`
+#### WeatherAPI.com Details:
+- *Endpoint*: [https://api.weatherapi.com/v1/current.json](https://api.weatherapi.com/v1/current.json)
+- *Parameters*: `key` (your API key), `q` (latitude and longitude)
+- *Data Retrieved*: Location name, region, country, temperature (Celsius and Fahrenheit), humidity, wind speed, and "feels like" temperature.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Step 5: Display Weather Information 🌡️
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Upon successful API completion, displayed the fetched weather information.
+- Showed details such as location name, region, country, temperature (Celsius and Fahrenheit), humidity, wind speed, and "feels like" temperature.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Step 6: Local Storage Persistence (use Context for this) 📦
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Saved the last entered latitude and longitude values locally using `localStorage` when the user closes the application.
+- Retrieved and pre-filled these values when the application is reopened.
 
-## Learn More
+### Step 7: Application Persistence 🔄
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Upon reopening the application, automatically retrieved the saved values and used them to trigger an API call to WeatherAPI.com for the latest weather conditions.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Usage
 
-### Code Splitting
+To use the Weather App, follow these steps:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. Clone this repository to your local machine.
 
-### Analyzing the Bundle Size
+   bash
+   git clone https://github.com/yourusername/weather-app.git
+   
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+2. Open the project directory.
 
-### Making a Progressive Web App
+   bash
+   cd weather-app
+   
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+3. Install the required dependencies.
 
-### Advanced Configuration
+   bash
+   npm install
+   
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+4. Create a `.env` file in the project root and add your WeatherAPI.com API key.
 
-### Deployment
+   env
+   REACT_APP_WEATHER_API_KEY=your_api_key_here
+   
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+5. Start the application.
 
-### `npm run build` fails to minify
+   bash
+   npm start
+   
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+6. Open your web browser and visit [http://localhost:3000](http://localhost:3000) to use the Weather App.
+
+## Technologies Used
+
+- React.js
+- Formik (optional)
+- WeatherAPI.com
+- HTML/CSS
+- JavaScript
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+Special thanks to [WeatherAPI.com](https://www.weatherapi.com/) for providing the weather data API.
+
+---
+
+Enjoy checking the weather with the Weather App! If you have any questions or suggestions, please feel free to open an issue or contribute to the project. Happy coding! 🌦️🌨️☀️
