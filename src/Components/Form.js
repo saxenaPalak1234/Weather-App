@@ -29,7 +29,7 @@ export default function Form({ onSubmit }) {
           <div className="head">
             <span>
               <h1>
-                Weather App
+                Weather App Live
               </h1>
             </span>
           </div>
